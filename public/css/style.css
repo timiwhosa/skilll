@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    font-family: 'nunito', Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --primaryColor: #222222;
+    --primaryLight: #222222c0;
+}
+
+html{
+    scroll-behavior: smooth;
+    width: 100vw;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+    font-family: 'nunito';
+    src: url('/css/fonts/Nunito/Nunito-Regular.ttf');
+}
+@font-face {
+    font-family: 'nunito-black';
+    src: url('/css/fonts/Nunito/Nunito-Black.ttf');
+}
+@font-face {
+    font-family: 'lora-bold';
+    src: url('/css/fonts/static/Lora-Bold.ttf');
+}
+@font-face {
+    font-family: 'rubik-bold';
+    src: url('/css/fonts/static/rubik-Bold.ttf');
+}
+.container{
+    width: 63vw;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    min-width: 620px;
+}
+.logo{
+    font-family: 'nunito-black', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.primary-btn{
+    border-radius: 4px;
+    background-color: var(--primaryColor);
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 4px var(--primaryLight);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    max-width: 110px;
+    text-align: center;
+    justify-content: center;
+}
+.primary-btn:active{
+    box-shadow: none;
+}
+.nunito{
+    font-family: 'nunito';
+}
+h1{
+    font-family: 'lora-bold';
+    margin: 5vh 0;
+    max-width: 450px;
+}
+.small{
+    font-size: 14px;
+}
+input{
+    border-radius: 4px;
+    border: .5px solid var(--primaryLight);
+    padding: 10px;
+    font-size: 16px;
+    transition: all ease-in-out .5s;
+}
+input:focus{
+    border: 1px solid var(--primaryColor);
+}
+input::placeholder{
+    color: var(--primaryLight);
+}
+/* input[type="search"]::-ms-clear, input[type="search"]::-ms-reveal{
+    color:var(--primaryColor);
+} */
+/* input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration, input[type="search"]::-webkit-search-decoration{
+    color:var(--primaryColor);
+    display: block;
+}
+input[type="search"]::-webkit-search-cancel-button{
+    background-color: black;
+} */
+textarea{
+    border-radius: 4px;
+    padding: 10px;
+    border: .5px solid var(--primaryLight);
+    resize: none;
+}
+textarea:focus{
+    border: 1.5px solid var(--primaryColor);
+}
+select{
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--primaryColor);
+    width: 110px;
+    cursor: pointer;
+}
+
+.search-intro{
+    display: grid;
+    grid-gap: 20px;
+    margin-bottom: 50px;
+}
+.search-intro form ul{
+    display: flex;
+    align-items: center;
+}
+.search-intro form ul li{
+    margin-right: 20px;
+}
+
+.join-div{
+    display: grid;
+    grid-gap: 10px;
+    margin-bottom: 5vh;
+}
+.join-div form{
+    display: grid;
+    max-width: 50vw;
+}
+.join-div form > div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin:10px 0 20px;
+    grid-gap: 10px;
+}
+.join-div form >div div{
+    display: grid;
+    grid-gap: 10px;
+}
+.join-div form input, .join-div form textarea{
+    max-width: 250px;
+}
+.join-div form button{
+    display: flex;
+    justify-self: flex-end;
+}
+
+@media screen and (max-width: 480px) {
+    .container{
+        width: 90vw;
+        min-width: auto;
+        max-width: 100vw;
+        margin-bottom: 60px;
+    }
+    h1{
+        max-width: none;
+    }
+    .primary-btn{
+        width: 60vw;
+        margin: 0 auto;
+        max-width: none;
+        display: block;
+    }
+    .search-intro form ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .search-intro form ul li{
+        margin: 0;
+    }
+    select{
+        width: 100%;
+        max-width: none;
+    }
+    input{
+        width: 100%;
+        max-width: none;
+    }
+    .join-div form{
+        max-width: none;
+    }
+    .join-div form > div{
+        grid-template-columns: 1fr;
+    }
+    .join-div form > div div{
+        grid-template-columns: 1fr;
+    }
+    .join-div form input, .join-div form textarea{
+        max-width: none;
+    }
+}
+
+
+
+
+
+
+

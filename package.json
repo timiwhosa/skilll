@@ -1,0 +1,38 @@
+{
+  "name": "honeycare",
+  "version": "1.0.0",
+  "description": "online pharmacy Drug sale",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "easyinvoice": "^1.0.144",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "https": "^1.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.24.0",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.13.5",
+    "multer": "^1.4.2",
+    "pdf-creator-node": "^2.2.4",
+    "request": "^2.88.2",
+    "ws": "^8.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "ifotim",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timiwhosa/honeycare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timiwhosa/honeycare/issues"
+  },
+  "homepage": "https://github.com/timiwhosa/honeycare#readme"
+}
