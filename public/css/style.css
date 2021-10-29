@@ -113,6 +113,7 @@ select{
     border: 1px solid var(--primaryColor);
     width: 110px;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .search-intro{
