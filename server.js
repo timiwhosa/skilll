@@ -7,11 +7,11 @@ var mongodb = require("mongodb");
 var mongoose = require("mongoose");
 // var multer = require("multer");
 // var moment = require("moment");
-var fetch = require("node-fetch");
-var fs = require("fs");
+// var fetch = require("node-fetch");
+// var fs = require("fs");
 var bcrypt = require("bcrypt");
 require("dotenv/config");
-var session = require("express-session");
+// var session = require("express-session");
 
 mongoose.connect(
   process.env.MONGO_URL,
@@ -51,17 +51,17 @@ var salt = parseInt(process.env.Salt);
 // );
 // const user = require("./models/user");
 
-function auth(req, res, next) {
-  user.find({}).then(async (data) => {
-    if (data) {
-      if (req.session.userId === data[0]._id.toString()) {
-        next();
-      } else {
-        res.redirect("/");
-      }
-    }
-  });
-}
+// function auth(req, res, next) {
+//   user.find({}).then(async (data) => {
+//     if (data) {
+//       if (req.session.userId === data[0]._id.toString()) {
+//         next();
+//       } else {
+//         res.redirect("/");
+//       }
+//     }
+//   });
+// }
 
 // get Request
 app.get("/", (req, res) => {
@@ -101,8 +101,8 @@ var Skilll = new mongoose.model("skilll", SkiilllSchema);
 app.get("/search", Jsonparser, (req, res) => {
   Skilll.find({
     $and: [
-      { school: req.query.school.toLowerCase() },
-      { skill: { $regex: req.query.keyword } },
+      { school : req.query.school.toLowerCase() },
+      { skill: { $regex: req.query.keyword.toLocaleLowerCase() } },
     ],
   }).then((data) => {
     if (data && data.length > 0) {
@@ -143,7 +143,7 @@ app.post("/joinSkilll", Jsonparser, (req, res) => {
     var user = {
       name: req.body.name.escape(),
       school: req.body.school.toLowerCase().escape(),
-      skill: req.body.skilll.escape(),
+      skill: req.body.skilll.toLowerCase().escape(),
       portfolio: req.body.portfolio.escape(),
       twitter: req.body.twitter.escape(),
       password: req.body.password,
@@ -174,7 +174,7 @@ app.post("/joinSkilll", Jsonparser, (req, res) => {
   }
 });
 app.post("/UpdateSkilll", Jsonparser, (req, res) => {
-  // console.log(req.body);
+  
   //check if user exists, Update details to database and give response
   var id = mongodb.ObjectID(req.body.myId);
   Skilll.findOne({ _id: id }).then(async (data) => {
@@ -189,8 +189,8 @@ app.post("/UpdateSkilll", Jsonparser, (req, res) => {
             {
               $set: {
                 name: req.body.name.escape(),
-                school: req.body.school.escape(),
-                skill: req.body.skill.escape(),
+                school: req.body.school.toLowerCase().escape(),
+                skill: req.body.skill.toLowerCase().escape(),
                 portfolio: req.body.portfolio.escape(),
                 twitter: req.body.twitter.escape(),
               },

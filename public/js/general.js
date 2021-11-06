@@ -97,7 +97,7 @@ function search(searchValue) {
             data.keyword = searchValue
             savesearch(data);
             loadList(data.data);
-            console.log(data);
+            // console.log(data);
           } else {
             messageDiv(data);
           }
@@ -327,7 +327,7 @@ function edit(id) {
   var editTwitter = document.getElementById("edit-twitter");
   var editSkill = document.getElementById("edit-skilll");
   if (searchResult) {
-    console.log(searchResult)
+    // console.log(searchResult)
     var t = searchResult.data.filter((dat) => {
       if (dat._id === id) {
         editName.value = dat.name;
